@@ -55,25 +55,47 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for changes since last release
+        id: changes
+        run: |
+          PREV_TAG=$(git describe --abbrev=0 --tags HEAD^ 2>/dev/null || echo "")
+          if [ -z "$PREV_TAG" ]; then
+            echo "No previous tag — including ${{ matrix.path }} in first release"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          elif git log "${PREV_TAG}..HEAD" --oneline -- "${{ matrix.path }}" | grep -q .; then
+            echo "Changes detected in ${{ matrix.path }} since ${PREV_TAG}"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes in ${{ matrix.path }} since ${PREV_TAG} — skipping"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
 
       - uses: actions/checkout@v4
+        if: steps.changes.outputs.changed == 'true'
         with:
           repository: common-cloud-controls/delivery-toolkit
           path: delivery-toolkit
 
       - uses: actions/setup-go@v5
+        if: steps.changes.outputs.changed == 'true'
         with:
           go-version-file: delivery-toolkit/go.mod
 
       - name: Build ccc
+        if: steps.changes.outputs.changed == 'true'
         run: go build -o /usr/local/bin/ccc ./delivery-toolkit
 
       - name: Release artifacts
+        if: steps.changes.outputs.changed == 'true'
         run: |
           ccc release controls "${{ matrix.path }}" "${{ matrix.title }}" \
             --controls-dir .
 
       - name: Get website token
+        if: steps.changes.outputs.changed == 'true'
         uses: actions/create-github-app-token@v1
         id: app-token
         with:
@@ -83,6 +105,7 @@ jobs:
           repositories: website-new
 
       - name: Publish to website
+        if: steps.changes.outputs.changed == 'true'
         run: |
           ccc publish controls "${{ matrix.path }}" \
             --tag ${{ github.ref_name }} \
