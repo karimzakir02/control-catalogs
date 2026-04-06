@@ -1,0 +1,91 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - path: ai-ml/gen-ai
+            title: Generative AI
+          - path: ai-ml/mlde
+            title: ML Development Environments
+          - path: app-integration/message
+            title: Messaging
+          - path: compute/batchproc
+            title: Batch Processing
+          - path: compute/serverless-computing
+            title: Serverless Computing
+          - path: compute/virtual-machines
+            title: Virtual Machines
+          - path: crypto/key
+            title: Key Management
+          - path: crypto/secrets
+            title: Secrets Management
+          - path: database/relational
+            title: Relational Database
+          - path: database/vector
+            title: Vector Database
+          - path: database/warehouse
+            title: Data Warehouse
+          - path: devtools/build
+            title: Build Systems
+          - path: devtools/container-registry
+            title: Container Registry
+          - path: identity/iam
+            title: Identity and Access Management
+          - path: management/auditlog
+            title: Audit Logging
+          - path: management/logging
+            title: Logging
+          - path: management/monitoring
+            title: Monitoring
+          - path: networking/loadbalancer
+            title: Load Balancer
+          - path: networking/vpc
+            title: Virtual Private Cloud
+          - path: storage/object
+            title: Object Storage
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: common-cloud-controls/delivery-toolkit
+          path: delivery-toolkit
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: delivery-toolkit/go.mod
+
+      - name: Build ccc
+        run: go build -o /usr/local/bin/ccc ./delivery-toolkit
+
+      - name: Release artifacts
+        run: |
+          ccc release controls "${{ matrix.path }}" "${{ matrix.title }}" \
+            --controls-dir .
+
+      - name: Get website token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.CCC_BOT_APP_ID }}
+          private-key: ${{ secrets.CCC_BOT_PRIVATE_KEY }}
+          owner: common-cloud-controls
+          repositories: website-new
+
+      - name: Publish to website
+        run: |
+          ccc publish controls "${{ matrix.path }}" \
+            --tag ${{ github.ref_name }} \
+            --website-repo common-cloud-controls/website-new
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
