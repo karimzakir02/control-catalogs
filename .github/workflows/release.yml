@@ -78,7 +78,7 @@ jobs:
         uses: actions/create-github-app-token@v1
         id: app-token
         with:
-          app-id: ${{ vars.CCC_BOT_APP_ID }}
+          app-id: ${{ secrets.CCC_BOT_APP_ID }}
           private-key: ${{ secrets.CCC_BOT_PRIVATE_KEY }}
           owner: common-cloud-controls
           repositories: website-new
