@@ -81,35 +81,13 @@ jobs:
           app-id: ${{ vars.CCC_BOT_APP_ID }}
           private-key: ${{ secrets.CCC_BOT_PRIVATE_KEY }}
           owner: common-cloud-controls
-          repositories: delivery-toolkit,website-new
+          repositories: website-new
 
-      - uses: actions/checkout@v4
+      - name: Release and publish
         if: steps.changes.outputs.changed == 'true'
+        uses: common-cloud-controls/delivery-toolkit@main
         with:
-          repository: common-cloud-controls/delivery-toolkit
-          path: delivery-toolkit
+          type: controls
+          path: ${{ matrix.path }}
+          title: ${{ matrix.title }}
           token: ${{ steps.app-token.outputs.token }}
-
-      - uses: actions/setup-go@v5
-        if: steps.changes.outputs.changed == 'true'
-        with:
-          go-version-file: delivery-toolkit/go.mod
-
-      - name: Build ccc
-        if: steps.changes.outputs.changed == 'true'
-        run: go build -o /usr/local/bin/ccc ./delivery-toolkit
-
-      - name: Release artifacts
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          ccc release controls "${{ matrix.path }}" "${{ matrix.title }}" \
-            --controls-dir .
-
-      - name: Publish to website
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          ccc publish controls "${{ matrix.path }}" \
-            --tag ${{ github.ref_name }} \
-            --website-repo common-cloud-controls/website-new
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
