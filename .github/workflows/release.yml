@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v2026.04.rc-1)'
+        required: true
 
 jobs:
   release:
@@ -57,38 +62,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 0
-
-      - name: Check for changes since last release
-        id: changes
-        run: |
-          PREV_TAG=$(git describe --abbrev=0 --tags HEAD^ 2>/dev/null || echo "")
-          if [ -z "$PREV_TAG" ]; then
-            echo "No previous tag — including ${{ matrix.path }} in first release"
-            echo "changed=true" >> $GITHUB_OUTPUT
-          elif git log "${PREV_TAG}..HEAD" --oneline -- "${{ matrix.path }}" | grep -q .; then
-            echo "Changes detected in ${{ matrix.path }} since ${PREV_TAG}"
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "No changes in ${{ matrix.path }} since ${PREV_TAG} — skipping"
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Get app token
-        if: steps.changes.outputs.changed == 'true'
-        uses: actions/create-github-app-token@v3
-        id: app-token
-        with:
-          app-id: ${{ secrets.CCC_BOT_APP_ID }}
-          private-key: ${{ secrets.CCC_BOT_PRIVATE_KEY }}
-          owner: common-cloud-controls
-          repositories: common-cloud-controls.github.io
+          fetch-depth: 0  # required to compare against previous tags
 
       - name: Release and publish
-        if: steps.changes.outputs.changed == 'true'
         uses: common-cloud-controls/delivery-toolkit@main
         with:
           type: controls
           path: ${{ matrix.path }}
           title: ${{ matrix.title }}
-          token: ${{ steps.app-token.outputs.token }}
+          tag: ${{ inputs.tag || github.ref_name }}
+          app-id: ${{ secrets.CCC_BOT_APP_ID }}
+          private-key: ${{ secrets.CCC_BOT_PRIVATE_KEY }}
