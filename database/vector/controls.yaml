@@ -49,12 +49,14 @@ control-families:
             applicability: [tlp-clear, tlp-green, tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH02
                 remarks: Embedding and Index Poisoning
               - reference-id: CCC.Vector.TH05
                 remarks: Embedding Format or Dimension Attacks
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH12
                 remarks: Resource Constraints are Exhausted
         guideline-mappings:
@@ -75,12 +77,14 @@ control-families:
             applicability: [tlp-clear, tlp-green, tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH02
                 remarks: Embedding and Index Poisoning
               - reference-id: CCC.Vector.TH04
                 remarks: Index Corruption or Downgrade
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH01
                 remarks: Access Control is Misconfigured
         guideline-mappings:
@@ -101,10 +105,12 @@ control-families:
             applicability: [tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH03
                 remarks: Cross-modal or Metadata Leakage
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH01
                 remarks: Access Control is Misconfigured
         guideline-mappings:
@@ -129,10 +135,12 @@ control-families:
             applicability: [tlp-green, tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH02
                 remarks: Embedding and Index Poisoning
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH12
                 remarks: Resource Constraints are Exhausted
         guideline-mappings:
@@ -153,10 +161,12 @@ control-families:
             applicability: [tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH04
                 remarks: Index Corruption or Downgrade
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH09
                 remarks: Logs or Monitoring Data are Read by Unauthorized Users
               - reference-id: CCC.Core.TH04
@@ -179,10 +189,12 @@ control-families:
             applicability: [tlp-clear, tlp-green, tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH05
                 remarks: Embedding Format or Dimension Attacks
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH06
                 remarks: Data is Lost or Corrupted
         guideline-mappings:
@@ -203,7 +215,7 @@ control-families:
             applicability: [tlp-amber, tlp-red]
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Vector.Threats
             entries:
               - reference-id: CCC.Vector.TH06
                 remarks: Search Result Manipulation via ANN Bias

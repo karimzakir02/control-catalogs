@@ -42,7 +42,7 @@ control-families:
               - tlp-amber
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.CntrReg.Threats
             entries:
               - reference-id: CCC.CntrReg.TH01
         guideline-mappings:
@@ -72,7 +72,7 @@ control-families:
               - tlp-amber
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH14
         guideline-mappings:

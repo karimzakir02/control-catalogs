@@ -72,7 +72,7 @@ An optional list of references to controls defined in [core-catalog](https://git
 
 ```yaml
 imports:
-  - reference-id: CCC
+  - reference-id: CCC.Core.Controls
     entries:
       - reference-id: CCC.Core.CN01
         remarks: Prevent Unencrypted Requests

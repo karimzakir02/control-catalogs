@@ -54,7 +54,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH03
                 strength: 0 # Not yet specified
@@ -99,7 +99,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH06
                 strength: 0 # Not yet specified
@@ -144,7 +144,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH02
                 strength: 0 # Not yet specified
@@ -179,7 +179,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH01
                 strength: 0 # Not yet specified
@@ -227,7 +227,7 @@ control-families:
                 strength: 0 # Not yet specified
               - reference-id: Account lockout after a defined number of failed login attempts.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH01
                 strength: 0 # Not yet specified
@@ -274,7 +274,7 @@ control-families:
               Where possible, prefer temporary, short-lived credentials over long-lived static ones
               to further minimize risk.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH09
                 strength: 0 # Not yet specified
@@ -307,7 +307,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH10
                 strength: 0 # Not yet specified
@@ -342,7 +342,7 @@ control-families:
               IAM user credentials (such as passwords or access keys) that have not been used
               for 90 days or more must be automatically removed or deactivated.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH11
                 strength: 0 # Not yet specified
@@ -376,7 +376,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH01
                 strength: 0 # Not yet specified
@@ -422,7 +422,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH01
                 strength: 0 # Not yet specified
@@ -461,7 +461,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.IAM.Threats
             entries:
               - reference-id: CCC.IAM.TH02
                 strength: 0 # Not yet specified

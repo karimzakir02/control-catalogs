@@ -45,7 +45,7 @@ control-families:
               Azure Monitor, Cloud Audit Logs) to route notifications to an
               incident-response channel.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.KeyMgmt.Threats
             entries:
               - reference-id: CCC.KeyMgmt.TH01
                 strength: 0 # Not yet specified
@@ -81,7 +81,7 @@ control-families:
             recommendation: Periodically audit policy documents via automated
               tooling and report any deviations.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.KeyMgmt.Threats
             entries:
               - reference-id: CCC.KeyMgmt.TH02
                 strength: 0 # Not yet specified
@@ -118,7 +118,7 @@ control-families:
             recommendation: Use cloud-provider rotation features and verify via
               configuration scanning.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.KeyMgmt.Threats
             entries:
               - reference-id: CCC.KeyMgmt.TH03
                 strength: 0 # Not yet specified
@@ -151,7 +151,7 @@ control-families:
             recommendation: Implement an approval workflow that validates
               attestation data before import.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.KeyMgmt.Threats
             entries:
               - reference-id: CCC.KeyMgmt.TH04
                 strength: 0 # Not yet specified

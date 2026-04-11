@@ -59,7 +59,7 @@ control-families:
             recommendation: |
               Ensure verification process includes a chained hash function.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH06
                 strength: 0 # Not yet specified
@@ -86,7 +86,7 @@ control-families:
               - tlp-amber
             recommendation: "Review audit log configuration"
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH06
         guideline-mappings:
@@ -126,7 +126,7 @@ control-families:
             recommendation: |
               Ensure alerting is correctly configured
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH07
         guideline-mappings:
@@ -157,7 +157,7 @@ control-families:
               Ensure the target logging bucket is configured for appropriate security,
               including restricted access and immutability.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH01
                 strength: 0 # Not yet specified
@@ -189,7 +189,7 @@ control-families:
             recommendation: |
               Configure audit log exporting.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH07
         guideline-mappings:
@@ -221,7 +221,7 @@ control-families:
               Configure the audit log bucket's lifecycle rules or object retention settings to enforce
               the required data retention period.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH06
                 strength: 0 # Not yet specified
@@ -253,7 +253,7 @@ control-families:
               Enable MFA Delete (or equivalent multi-factor authentication for delete operations)
               on the audit log bucket.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH06
                 strength: 0 # Not yet specified
@@ -284,7 +284,7 @@ control-families:
             recommendation: |
               Configure object lock policy.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH07
         guideline-mappings:
@@ -315,7 +315,7 @@ control-families:
             recommendation: |
               Review field level access controls on audit data.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH07
         guideline-mappings:
@@ -364,7 +364,7 @@ control-families:
               Configure bucket policies and access control lists (ACLs) to restrict public access.
               Regularly review bucket permissions to ensure no public access has been inadvertently granted.
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH01
         guideline-mappings:

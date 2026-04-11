@@ -43,7 +43,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.VPC.Threats
             entries:
               - reference-id: CCC.VPC.TH01
         guideline-mappings:
@@ -73,7 +73,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.VPC.Threats
             entries:
               - reference-id: CCC.VPC.TH02
         guideline-mappings:
@@ -107,7 +107,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.VPC.Threats
             entries:
               - reference-id: CCC.VPC.TH03
         guideline-mappings:
@@ -138,7 +138,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.VPC.Threats
             entries:
               - reference-id: CCC.VPC.TH04
         guideline-mappings:

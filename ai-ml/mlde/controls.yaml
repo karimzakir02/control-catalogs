@@ -43,10 +43,12 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH01
                 strength: 0 # Not yet specified
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH01
         guideline-mappings:
           - reference-id: NIST-CSF
@@ -90,7 +92,7 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH01
         guideline-mappings:
@@ -132,7 +134,7 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH01
         guideline-mappings:
@@ -173,10 +175,12 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH02
                 strength: 0 # Not yet specified
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH02
         guideline-mappings:
           - reference-id: NIST-CSF
@@ -218,7 +222,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH04
         guideline-mappings:
@@ -261,10 +265,12 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH04
                 strength: 0 # Not yet specified
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH06
         guideline-mappings:
           - reference-id: NIST-CSF
@@ -306,10 +312,12 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH02
                 strength: 0 # Not yet specified
+          - reference-id: CCC.VPC.Threats
+            entries:
               - reference-id: CCC.VPC.TH02
         guideline-mappings:
           - reference-id: NIST-CSF
@@ -348,10 +356,12 @@ control-families:
               - tlp-clear
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.MLDE.Threats
             entries:
               - reference-id: CCC.MLDE.TH01
                 strength: 0 # Not yet specified
+          - reference-id: CCC.Core.Threats
+            entries:
               - reference-id: CCC.Core.TH01
         guideline-mappings:
           - reference-id: NIST-CSF

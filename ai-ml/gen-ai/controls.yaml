@@ -70,7 +70,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH01
                 strength: 0 # Not yet specified
@@ -138,7 +138,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH01
                 strength: 0 # Not yet specified
@@ -211,7 +211,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH02
                 strength: 0 # Not yet specified
@@ -266,7 +266,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH02
                 strength: 0 # Not yet specified
@@ -310,7 +310,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH09
                 strength: 0 # Not yet specified
@@ -354,7 +354,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH07
                 strength: 0 # Not yet specified
@@ -394,7 +394,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH10
                 strength: 0 # Not yet specified
@@ -443,7 +443,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.GenAI.Threats
             entries:
               - reference-id: CCC.GenAI.TH01
                 strength: 0 # Not yet specified

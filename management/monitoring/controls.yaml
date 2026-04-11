@@ -42,7 +42,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Monitor.Threats
             entries:
               - reference-id: CCC.Monitor.TH03
         guideline-mappings:
@@ -72,7 +72,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Monitor.Threats
             entries:
               - reference-id: CCC.Monitor.TH06
         guideline-mappings:
@@ -108,7 +108,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Monitor.Threats
             entries:
               - reference-id: CCC.Monitor.TH04
         guideline-mappings:
@@ -138,7 +138,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Monitor.Threats
             entries:
               - reference-id: CCC.Monitor.TH02
         guideline-mappings:
@@ -168,7 +168,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Core.Threats
             entries:
               - reference-id: CCC.Core.TH10
         guideline-mappings:
@@ -196,7 +196,7 @@ control-families:
               - tlp-red
             recommendation: ""
         threat-mappings:
-          - reference-id: CCC
+          - reference-id: CCC.Monitor.Threats
             entries:
               - reference-id: CCC.Monitor.TH05
         guideline-mappings:
