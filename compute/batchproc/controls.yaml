@@ -2,4 +2,5 @@ imports:
   - reference-id: CCC.Core.Controls
     entries: []
 
-control-families: []
+controls:
+
