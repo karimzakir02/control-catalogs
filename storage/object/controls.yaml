@@ -56,7 +56,7 @@ controls:
         applicability:
           - tlp-amber
           - tlp-red
-        recommendation: ""
+        recommendation: "For a similar control for buckets, refer to CCC.ObjStor.CN01.AR01. Given the different API call for objects, a separate control is required."
       - id: CCC.ObjStor.CN01.AR03
         text: |
           When a request is made to write to a bucket, the service MUST
@@ -78,7 +78,7 @@ controls:
           - tlp-green
           - tlp-amber
           - tlp-red
-        recommendation: ""
+        recommendation: "For a similar control for buckets, refer to CCC.ObjStor.CN01.AR03. Given the different API call for objects, a separate control is required."
     threat-mappings:
       - reference-id: CCC.Core.Threats
         entries:
